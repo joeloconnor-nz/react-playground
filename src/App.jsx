@@ -1,3 +1,6 @@
+import { InlineLink } from './components/inline-link';
+import { Card } from './components/card';
+
 export default function App() {
     return (
         <div className="mx-auto flex flex-col">
@@ -22,13 +25,13 @@ export default function App() {
                     </p>
                     <div className="flex gap-3 p-4">
                         <a
-                            className="rounded-md border-2 bg-blue-400 p-2 text-white"
+                            className="rounded-md border-2 bg-blue-400 p-2 text-white transition ease-in-out hover:bg-blue-500"
                             href="#"
                         >
                             Main action
                         </a>
                         <a
-                            className="rounded-md border-2 bg-slate-400 p-2 text-white"
+                            className="rounded-md border-2 bg-slate-400 p-2 text-white transition ease-in-out hover:bg-slate-500"
                             href="#"
                         >
                             Secondary action
@@ -37,15 +40,68 @@ export default function App() {
                 </section>
                 <section className="bg-stone-100 p-10">
                     <ul className="mx-auto grid max-w-screen-lg grid-cols-3 gap-10">
-                        <Card />
-                        <Card />
-                        <Card />
-                        <Card />
-                        <Card />
-                        <Card />
-                        <Card />
-                        <Card />
-                        <Card />
+                        <Card
+                            description="This is a wider card with supporting text below as a natural
+                    lead-in to additional content. This content is a little bit
+                    longer."
+                            duration={9}
+                        />
+                        <Card
+                            imageSrc="https://loremflickr.com/350/225"
+                            description="This is a wider card with supporting text below as a natural
+                    lead-in to additional content. This content is a little bit
+                    longer."
+                            duration={28}
+                        />
+                        <Card
+                            imageSrc="https://loremflickr.com/350/225"
+                            description="This is a wider card with supporting text below as a natural
+                    lead-in to additional content. This content is a little bit
+                    longer."
+                            duration={1}
+                        />
+                        <Card
+                            imageSrc="https://loremflickr.com/350/225"
+                            description="This is a wider card with supporting text below as a natural
+                    lead-in to additional content. This content is a little bit
+                    longer."
+                            duration={5}
+                        />
+                        <Card
+                            imageSrc="https://loremflickr.com/350/225"
+                            description="This is a wider card with supporting text below as a natural
+                    lead-in to additional content. This content is a little bit
+                    longer."
+                            duration={33}
+                        />
+                        <Card
+                            imageSrc="https://loremflickr.com/350/225"
+                            description="This is a wider card with supporting text below as a natural
+                    lead-in to additional content. This content is a little bit
+                    longer."
+                            duration={42}
+                        />
+                        <Card
+                            imageSrc="https://loremflickr.com/350/225"
+                            description="This is a wider card with supporting text below as a natural
+                    lead-in to additional content. This content is a little bit
+                    longer."
+                            duration={5}
+                        />
+                        <Card
+                            imageSrc="https://loremflickr.com/350/225"
+                            description="This is a wider card with supporting text below as a natural
+                    lead-in to additional content. This content is a little bit
+                    longer."
+                            duration={18}
+                        />
+                        <Card
+                            imageSrc="https://loremflickr.com/350/225"
+                            description="This is a wider card with supporting text below as a natural
+                    lead-in to additional content. This content is a little bit
+                    longer."
+                            duration={10}
+                        />
                     </ul>
                 </section>
             </main>
@@ -54,41 +110,28 @@ export default function App() {
                     <section>
                         <p>
                             Recreation of a{' '}
-                            <a
-                                className="decoration-blue-400 hover:text-blue-400 hover:underline"
-                                href="https://getbootstrap.com/docs/4.0/examples/album/"
-                                target="_blank"
-                            >
-                                Bootstrap Album template
-                            </a>{' '}
+                            <InlineLink
+                                address="https://getbootstrap.com/docs/4.0/examples/album/"
+                                text="Bootstrap Album template"
+                            />{' '}
                             using{' '}
-                            <a
-                                className="decoration-blue-400 hover:text-blue-400 hover:underline"
-                                href="https://vitejs.dev"
-                                target="_blank"
-                            >
-                                Vite{' '}
-                            </a>
+                            <InlineLink
+                                address="https://vitejs.dev"
+                                text="Vite"
+                            />{' '}
                             and{' '}
-                            <a
-                                className="decoration-blue-400 hover:text-blue-400 hover:underline"
-                                href="https://tailwindcss.com"
-                                target="_blank"
-                            >
-                                Tailwind
-                            </a>
+                            <InlineLink
+                                address="https://tailwindcss.com"
+                                text="Tailwind"
+                            />
                             .
                         </p>
                         <p>
                             Follow me on{' '}
-                            <a
-                                className="decoration-blue-400 hover:text-blue-400 hover:underline"
-                                href="https://github.com/joeloconnor-nz"
-                                target="_blank"
-                            >
-                                GitHub
-                            </a>
-                            .
+                            <InlineLink
+                                address="https://github.com/joeloconnor-nz"
+                                text="GitHub"
+                            />
                         </p>
                     </section>
                     <span>
@@ -99,45 +142,13 @@ export default function App() {
                                     behavior: 'smooth',
                                 })
                             }
+                            className="decoration-blue-400 hover:text-blue-400 hover:underline"
                         >
-                            Back to top
+                            Back to top ↑
                         </button>
                     </span>
                 </div>
             </footer>
         </div>
     );
-}
-
-function Card() {
-    return (
-        <li className="overflow-hidden rounded-md bg-red-100">
-            <img
-                className="w-full"
-                src="https://via.placeholder.com/350x225.png"
-            />
-            <div className="flex flex-col bg-white p-5">
-                <p className="mb-5">
-                    This is a wider card with supporting text below as a natural
-                    lead-in to additional content. This content is a little bit
-                    longer.
-                </p>
-                <div className="flex items-center justify-between text-stone-500">
-                    <div>
-                        <button className="rounded-l-md border-y-2 border-l-2 py-1 px-2">
-                            View
-                        </button>
-                        <button className="rounded-r-md border-2 py-1 px-2">
-                            Edit
-                        </button>
-                    </div>
-                    <span className="text-sm">9 mins</span>
-                </div>
-            </div>
-        </li>
-    );
-}
-
-function Link(props) {
-    return <a href={props.address}>{props.text}</a>;
 }
