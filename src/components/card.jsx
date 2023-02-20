@@ -5,12 +5,17 @@ export function Card(props) {
         duration === 1 ? `${duration} min` : `${duration} mins`;
 
     const imageSrc =
-        props.imageSrc || 'https://via.placeholder.com/350x225.png';
+        props.imageSrc || 'https://via.placeholder.com/350x225/E2E8F0.png';
 
     return (
-        <li className="overflow-hidden rounded-md bg-red-100">
-            <img className="w-full" src={imageSrc} />
-            <div className="flex flex-col bg-white p-5">
+        <li className="flex flex-col overflow-hidden rounded-md">
+            <img
+                className="w-full bg-slate-200"
+                src={imageSrc}
+                height={225}
+                width={350}
+            />
+            <div className="flex grow flex-col justify-between bg-white p-5">
                 <p className="mb-5">{description}</p>
                 <div className="flex items-center justify-between text-stone-500">
                     <div>

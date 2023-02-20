@@ -41,9 +41,7 @@ export default function App() {
                 <section className="bg-stone-100 p-10">
                     <ul className="mx-auto grid max-w-screen-lg grid-cols-3 gap-10">
                         <Card
-                            description="This is a wider card with supporting text below as a natural
-                    lead-in to additional content. This content is a little bit
-                    longer."
+                            description="Card component with an undefined imageSrc prop."
                             duration={9}
                         />
                         <Card
